@@ -14,13 +14,13 @@ dl, dd, ol, ul, figure {
 body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
-  background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal; }
+  font-kerning: normal;
+  background-color: #D98295; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -500,9 +500,6 @@ hr {
   height: 1px;
   border: none;
   border-top: 1px dashed #0066CC; }
-
-body {
-  background-color: #f8f8f8; }
 
 .daohang {
   height: 25px;
