@@ -10,11 +10,8 @@
 @import "components.social";
 
 @import "mobile.settings";
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting",
-		"top",
-		"contant"
-;
+@import "base";
+@import "layout";
+@import "syntax-highlighting";
+@import	"top";
+@import	"contant";
