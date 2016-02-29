@@ -582,6 +582,7 @@ hr {
   border-color: #666; }
 
 .contant {
+  width: 1000px;
   margin-left: 50px;
   margin-right: 50px;
   text-indent: 2em;

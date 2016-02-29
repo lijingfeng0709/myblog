@@ -27,3 +27,8 @@ layout: shouye
   <!--<p class="rss-subscribe">李敬峰 <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>-->
 
 </div>
+<div class="pagination">
+    {% for post in paginator.posts %}
+    <a href="{{ post.url }}">{{ post.title }}</a>
+{% endfor %}
+    </div>
