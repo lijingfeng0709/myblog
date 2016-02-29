@@ -647,3 +647,35 @@ p {
   line-height: 1.8em;
   margin: 1em 0;
   color: #333; }
+
+.pagestyle {
+  border-color: #060;
+  background-color: #FC0;
+  height: 50px;
+  width: 60px;
+  font-family: 微软雅黑;
+  font-size: 15pt;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 5px; }
+
+.pagestyle:hover {
+  background-color: #d98295;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  -webkit-transition: background 1s; }
+
+.ppagestyle {
+  font-family: 微软雅黑;
+  font-size: 15pt; }
+
+.shadow {
+  -webkit-box-shadow: #666 0px 0px 10px;
+  -moz-box-shadow: #666 0px 0px 10px;
+  box-shadow: #666 0px 0px 10px; }

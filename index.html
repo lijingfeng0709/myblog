@@ -7,7 +7,7 @@ layout: shouye
   <h1 class="page-heading">目录</h1>
 
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
@@ -27,8 +27,27 @@ layout: shouye
   <!--<p class="rss-subscribe">李敬峰 <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>-->
 
 </div>
-<div class="pagination">
-    {% for post in paginator.posts %}
-    <a href="{{ post.url }}">{{ post.title }}</a>
-{% endfor %}
-    </div>
+<div align="center" class="content">
+<div id="pagination"> 
+<div class="pagenavi"> 
+{% if paginator.previous_page %} 
+{% if paginator.previous_page == 1 %} 
+<a href="/" class="current pagestyle shadow">前一页</a> 
+{% else %} 
+<a href="/page{{paginator.previous_page}}" class="pagestyle shadow">前一页</a> 
+{% endif %} 
+{% else %} 
+ <!--<span class="page_number ppagestyle"><<前一页</span> -->
+{% endif %} 
+
+<span class="page_number ppagestyle">第{{paginator.page}}页/共{{paginator.total_pages}}页</span> 
+{% if paginator.next_page %} 
+<a href="/page{{paginator.next_page}}" class="pagestyle shadow">后一页</a> 
+{% else %} 
+ <!--<span class="page_number ppagestyle">后一页>></span> -->
+{% endif %} 
+</div> 
+</div></div>
+
+
+

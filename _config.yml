@@ -6,7 +6,6 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-paginate: 2
 title: 李敬峰博客
 email: 247084776@qq.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -23,3 +22,7 @@ markdown: kramdown
 #设置生成网页位置
 permalink: /:categories/:title.html	
 
+
+permalink: pretty
+gems: [jekyll-paginate]
+paginate: 1
