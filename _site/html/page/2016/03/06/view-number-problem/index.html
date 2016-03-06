@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>博客首页显示日志浏览量问题</title>
+  <meta name="description" content="最近一直在鼓捣如何显示博客浏览量问题，于前天刚好看到一篇日志《为你的博客添加访问量统计》。作者详细介绍了如何使用该插件，但笔者在使用过程中出现了难题，索性花费一整天解决了。">
+	<link rel="stylesheet" href="/css/main.css">
+  <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="canonical" href="http://blog.lijingfeng.com/html/page/2016/03/06/view-number-problem/">
+  <link rel="alternate" type="application/rss+xml" title="李敬峰博客" href="http://blog.lijingfeng.com/feed.xml">
+  <link rel="short icon" href="/img/icon.ico" >
+  <script src="/js/hit-kounter-0.1.1.js"></script>
+</head>
+
+
+  <body>
+
+    <header align="center" class="test">
+<!--<audio autoplay="true" loop="true"  src="../music/Westlife - The Rose.mp3" controls>123</audio>-->
+	<div class="baohan">
+     <a class="lianjie daohang" href="/" target="_parent">首页</a>
+	 <a class="lianjie daohang" href="/" target="_blank">博客</a>
+      <a class="lianjie daohang" href="https://github.com/lijingfeng0709" target="_blank">Github</a>
+      <a class="lianjie daohang" href="http://weibo.com/jingfenglee" target="_blank">新浪微博</a>
+      <a class="lianjie daohang" href="https://shop109839628.taobao.com/" target="_blank">淘宝店铺</a>
+      <a class="lianjie daohang" href="/4/" target="_blank">微信</a>
+      <a class="lianjie daohang" href="http://lijingfeng.com/" target="_blank">导购网</a>
+	 </div>	 
+</header>
+
+    <div class="frame">
+     
+        <article>
+
+  <header>
+    <h1 class="ptitle" itemprop="name headline">博客首页显示日志浏览量问题</h1>
+    <p class="pubtime"><time datetime="2016-03-06T11:07:11+08:00" itemprop="datePublished">Mar 6, 2016</time><span style="padding-left:30px;">浏览量 :</span><span data-hk-page="current" style="padding-left:5px;padding-right:5px;"></span>次</p>
+  </header>
+<div class="contant">
+    <p>最近一直在鼓捣如何显示博客浏览量问题，于前天刚好看到一篇日志<a href="http://jerryzou.com/posts/introduction-to-hit-kounter/">《为你的博客添加访问量统计》</a>。作者详细介绍了如何使用该插件，但笔者在使用过程中出现了难题，索性花费一整天解决了。</p>
+
+<p>当我们想显示当前页面的访问量时，用<code class="highlighter-rouge">&lt;span data-hk-page="current"&gt; - &lt;/span&gt;</code>。
+显示指定页面时，更改data-hk-page的属性。笔者为了在日志列表中分别显示每个页面的浏览量时，对博客首页添加了如下代码
+<code class="highlighter-rouge">&lt;span data-hk-page="{ post.url | prepend: site.url }" style="padding-left:5px;padding-right:5px;"&gt;&lt;/span&gt;</code>,
+这段代码中<code class="highlighter-rouge"> post.url | prepend: site.url </code>代表每片日志的地址，但是在显示过程中却显示浏览次数为0。如下图所示：</p>
+<div align="center"><img src="/img/2016-3-6/1.jpg" /></div>
+<p>最后解析代码，发现网页该部分源码显示为：<code class="highlighter-rouge">&lt;span data-hk-page="http://yourdomain.com/2016/01/01/test/" style="padding-left:5px;padding-right:5px;"&gt;10&lt;/span&gt;</code>
+出现这种原因，是因为在配置_config.yml文件中，我们未对url进行更改，把<code class="highlighter-rouge">url: "http://yourdomain.com" # the base hostname &amp; protocol for your site</code>更改为你的博客地址，
+比如我自己的更改为<code class="highlighter-rouge">url: "http://blog.lijingfeng.com" # the base hostname &amp; protocol for your site</code>问题得以解决，效果图如下:</p>
+<div align="center"><img src="/img/2016-3-6/2.jpg" /></div>
+
+<h2>总结:</h2>
+
+<p>1、使用jekyll模版搭建博客时，多看看配置文件，尽量了解其功能，有哪些是需要自己配置的；</p>
+
+<p>2、并且在调试代码的过程中，出了在本地上调试外，也需要在服务器上调试，找出问题根结所在。</p>
+
+</div>
+</article>
+
+    
+    </div>
+
+    
+<footer class="site-footer">
+     Copyright @ 2006-2015 Li jingfeng All Rights Reserved
+</footer>
+
+  </body>
+
+</html>

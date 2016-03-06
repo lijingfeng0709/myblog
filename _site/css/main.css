@@ -586,9 +586,8 @@ hr {
   margin-left: 50px;
   margin-right: 50px;
   text-indent: 2em;
-  text-align: justify;
+  /*text-align:justify;*/
   text-justify: inter-ideograph;
-  /*文字两端对齐*/
   margin-top: 30px;
   line-height: 30px; }
   .contant code {
@@ -638,7 +637,9 @@ code {
   border: dashed 1px #666;
   text-height: font-size;
   padding: 2px 8px 2px 2px;
-  white-space: pre; }
+  white-space: pre;
+  font-family: Times New Roman;
+  margin: 0 atuo; }
 
 p {
   display: block;
