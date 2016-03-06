@@ -2,11 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>李敬峰博客</title>
-    <description>写二三事，记千百日</description>
+    <description>写二三事，记四五年。
+</description>
     <link>http://blog.lijingfeng.com/</link>
     <atom:link href="http://blog.lijingfeng.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Mar 2016 19:42:47 +0800</pubDate>
-    <lastBuildDate>Sat, 05 Mar 2016 19:42:47 +0800</lastBuildDate>
+    <pubDate>Sun, 06 Mar 2016 11:00:05 +0800</pubDate>
+    <lastBuildDate>Sun, 06 Mar 2016 11:00:05 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>

@@ -10,7 +10,7 @@ title: 李敬峰博客
 email: 247084776@qq.com
 description: > # this means to ignore newlines until "baseurl:"
   写二三事，记四五年。
-baseurl: "http://blog.lijingfeng.com" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://blog.lijingfeng.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  lijingfeng0709
