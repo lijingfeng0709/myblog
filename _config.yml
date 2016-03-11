@@ -23,4 +23,4 @@ permalink: /:categories/:title.html
 
 permalink: pretty
 gems: [jekyll-paginate]
-paginate: 1
+paginate: 5

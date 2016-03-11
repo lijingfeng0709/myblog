@@ -21,9 +21,9 @@ border-top:1px dashed #0066CC;
     min-width:900px; 
 	margin-bottom:20px; 
 	margin:0 auto;
-	background:url("../img/background.jpg");
+	background:url("../img/background.png") no-repeat center;
 	position:relative;
-	display:table; 
+	display:table;
 	a{
 		&:visited{
 		color:#000000;

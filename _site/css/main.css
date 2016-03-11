@@ -517,7 +517,7 @@ hr {
   min-width: 900px;
   margin-bottom: 20px;
   margin: 0 auto;
-  background: url("../img/background.jpg");
+  background: url("../img/background.png") no-repeat center;
   position: relative;
   display: table; }
   .test a:visited {
