@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>随机产生一个不同大小数字的序列</title>
+  <meta name="description" content="最近在做导师的项目过程中，需要用到一个不同大小的数字序列，从最开始，到现在一共用了两种方法，且相对来说，效率也越来越高，下面见源码：">
+	<link rel="stylesheet" href="/css/main.css">
+  <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="canonical" href="http://blog.lijingfeng.com/rand/2016/03/28/produce-a-series-random-numbers/">
+  <link rel="alternate" type="application/rss+xml" title="李敬峰博客" href="http://blog.lijingfeng.com/feed.xml">
+  <link rel="short icon" href="/img/icon.ico" >
+  <script src="/js/hit-kounter-0.1.1.js"></script>
+   <script src="/js/bootstrap.js"></script>
+</head>
+
+
+  <body>
+
+    <header align="center" class="test">
+<!--<audio autoplay="true" loop="true"  src="../music/Westlife - The Rose.mp3" controls>123</audio>-->
+	<div class="baohan">
+     <a class="lianjie daohang" href="/" target="_parent">首页</a>
+	 <a class="lianjie daohang" href="/" target="_blank">博客</a>
+      <a class="lianjie daohang" href="https://github.com/lijingfeng0709" target="_blank">Github</a>
+      <a class="lianjie daohang" href="http://weibo.com/jingfenglee" target="_blank">新浪微博</a>
+      <a class="lianjie daohang" href="https://shop109839628.taobao.com/" target="_blank">淘宝店铺</a>
+      <a class="lianjie daohang" href="/4/" target="_blank">微信</a>
+      <a class="lianjie daohang" href="http://lijingfeng.com/" target="_blank">导购网</a>
+	 </div>	 
+</header>
+
+    <div class="frame">
+     
+        <article>
+
+  <header>
+    <h1 class="ptitle" itemprop="name headline">随机产生一个不同大小数字的序列</h1>
+    <p class="pubtime"><time datetime="2016-03-28T17:39:11+08:00" itemprop="datePublished">Mar 28, 2016</time><span style="padding-left:30px;">浏览量 :</span><span data-hk-page="current" style="padding-left:5px;padding-right:5px;"></span>次</p>
+  </header>
+<div class="contant">
+    <p>最近在做导师的项目过程中，需要用到一个不同大小的数字序列，从最开始，到现在一共用了两种方法，且相对来说，效率也越来越高，下面见源码：</p>
+
+<p>第一种：</p>
+<pre>#define num 100
+void main(){
+    int a[num];
+    int i;
+    srand((unsigned)time(NULL));
+    for(i=0;i&lt;num;i++){
+        a[i]=rand()%num;
+        for(int j=0;j&lt;i;j++){
+           if (a[i]==a[j]){
+           a[i]=rand()%num;
+           j=-1;
+           }
+        }
+    }
+    for(i=0;i&lt;num;i++)  cout&lt;&lt;a[i]&lt;&lt;"  ";
+	
+}
+</pre>
+<p>第二种：</p>
+
+<pre>
+	void main(){
+        int a[10000],b[10000],b1,temp;
+        for(int i=0;i&lt;10000;i++){
+          a[i]=i+1;
+        }
+        srand((unsigned)time(0));
+        for(i=0;i&lt;10000;i++){
+          b1=rand()%(10000-i);
+          b[i]=a[b1];
+          for(int j=b1;j&lt;(10000-i);j++)    a[j]=a[j+1];
+        }
+        for(i=0;i&lt;10000;i++)    cout&lt;&lt;b[i]&lt;&lt;"\r";	
+	
+    }
+</pre>
+<h1>总结：</h1>
+<p>第一种方法属于暴力随机法，一个一个的产生，然后同之前产生好的序列进行对比，相同则重新产生，当规模较大时此方法效率低；第二种方法属于随机效率较高的随机法，首先产生一个序列，然后把该序列顺序打乱，规模大时，效率明显要高于第一种方法。</p>
+
+</div>
+</article>
+
+    
+    </div>
+
+    
+<footer class="site-footer">
+     Copyright @ 2006-2015 Li jingfeng All Rights Reserved
+</footer>
+
+  </body>
+
+</html>
